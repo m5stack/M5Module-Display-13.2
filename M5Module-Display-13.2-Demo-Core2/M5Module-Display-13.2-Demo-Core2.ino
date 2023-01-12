@@ -23,8 +23,8 @@ void setup() {
     display.setTextSize(1.5);
     display.setFont(&fonts::efontCN_24_b);
     display.startWrite();
-    display.drawPng(pattern_test, ~0u, 0, 0, display.width(), display.height(), 0, 0,
-                 3.0, 3.0, datum_t::middle_center);
+    display.drawPng(pattern_test, ~0u, 0, 0, display.width(), display.height(),
+                    0, 0, 3.0, 3.0, datum_t::middle_center);
     display.endWrite();
 
     lcd.begin();
@@ -68,24 +68,30 @@ void setup() {
 
 void loop(void) {
     display.clear(TFT_RED);
-    display.drawCentreString("M5STACK Display Module 13.2", display.width() / 2, 10);
-    display.drawCentreString("红(RED)", display.width() / 2, display.height() / 2);
+    display.drawCentreString("M5STACK Display Module 13.2", display.width() / 2,
+                             10);
+    display.drawCentreString("红(RED)", display.width() / 2,
+                             display.height() / 2);
     delay(4000);
 
     display.clear(TFT_GREEN);
-    display.drawCentreString("M5STACK Display Module 13.2", display.width() / 2, 10);
-    display.drawCentreString("绿(GREEN)", display.width() / 2, display.height() / 2);
+    display.drawCentreString("M5STACK Display Module 13.2", display.width() / 2,
+                             10);
+    display.drawCentreString("绿(GREEN)", display.width() / 2,
+                             display.height() / 2);
     delay(4000);
 
     display.clear(TFT_BLUE);
-    display.drawCentreString("M5STACK Display Module 13.2", display.width() / 2, 10);
-    display.drawCentreString("蓝(BLUE)", display.width() / 2, display.height() / 2);
+    display.drawCentreString("M5STACK Display Module 13.2", display.width() / 2,
+                             10);
+    display.drawCentreString("蓝(BLUE)", display.width() / 2,
+                             display.height() / 2);
     delay(4000);
 
     display.clear(TFT_BLACK);
-    display.drawPng(pattern_test, ~0u, 0, 0, display.width(), display.height(), 0, 0,
-                 (display.width() / 320), (display.height() / 240),
-                 datum_t::middle_center);
+    display.drawPng(pattern_test, ~0u, 0, 0, display.width(), display.height(),
+                    0, 0, (display.width() / 320), (display.height() / 240),
+                    datum_t::middle_center);
     delay(4000);
 }
 
