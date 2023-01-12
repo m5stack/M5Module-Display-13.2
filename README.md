@@ -8,7 +8,7 @@ Contains case programs of M5Stack Module Display 13.2.
 
 - [Document & Datasheet - M5Module-Display-13.2](https://docs.m5stack.com/en/module/Display%20Module%2013.2)
 
-# Dependencies
+## Dependencies
 
 The software is dependent on M5GFX and M5Unified library, 
 make sure you install those libraries with the IDE:
