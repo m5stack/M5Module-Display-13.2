@@ -8,7 +8,7 @@ static void play_wav(void*);
 
 extern const unsigned char pattern_test[13287];
 
-static M5ModuleDisplay hdmi(1280, 720);
+static M5ModuleDisplay display(1280, 720);
 static M5GFX lcd;
 
 void setup() {
@@ -18,21 +18,21 @@ void setup() {
 
     M5.begin(cfg);
 
-    hdmi.begin();
-    hdmi.setRotation(1);
-    hdmi.setTextSize(1.5);
-    hdmi.setFont(&fonts::efontCN_24_b);
-    hdmi.startWrite();
-    hdmi.drawPng(pattern_test, ~0u, 0, 0, hdmi.width(), hdmi.height(), 0, 0,
+    display.begin();
+    display.setRotation(1);
+    display.setTextSize(1.5);
+    display.setFont(&fonts::efontCN_24_b);
+    display.startWrite();
+    display.drawPng(pattern_test, ~0u, 0, 0, display.width(), display.height(), 0, 0,
                  3.0, 3.0, datum_t::middle_center);
-    hdmi.endWrite();
+    display.endWrite();
 
     lcd.begin();
     lcd.startWrite();
     lcd.setFont(&fonts::efontCN_24_b);
     lcd.clear(WHITE);
     lcd.setTextColor(ORANGE);
-    lcd.drawString("Display Module Demo", 50, 0);
+    lcd.drawString("Display module 13.2 Demo", 20, 0);
     lcd.setCursor(0, 80);
     lcd.setTextColor(BLACK);
     lcd.print("Loop Display:");
@@ -67,24 +67,24 @@ void setup() {
 }
 
 void loop(void) {
-    hdmi.clear(TFT_RED);
-    hdmi.drawCentreString("M5STACK Display Module 13.2", hdmi.width() / 2, 10);
-    hdmi.drawCentreString("红(RED)", hdmi.width() / 2, hdmi.height() / 2);
+    display.clear(TFT_RED);
+    display.drawCentreString("M5STACK Display Module 13.2", display.width() / 2, 10);
+    display.drawCentreString("红(RED)", display.width() / 2, display.height() / 2);
     delay(4000);
 
-    hdmi.clear(TFT_GREEN);
-    hdmi.drawCentreString("M5STACK Display Module 13.2", hdmi.width() / 2, 10);
-    hdmi.drawCentreString("绿(GREEN)", hdmi.width() / 2, hdmi.height() / 2);
+    display.clear(TFT_GREEN);
+    display.drawCentreString("M5STACK Display Module 13.2", display.width() / 2, 10);
+    display.drawCentreString("绿(GREEN)", display.width() / 2, display.height() / 2);
     delay(4000);
 
-    hdmi.clear(TFT_BLUE);
-    hdmi.drawCentreString("M5STACK Display Module 13.2", hdmi.width() / 2, 10);
-    hdmi.drawCentreString("蓝(BLUE)", hdmi.width() / 2, hdmi.height() / 2);
+    display.clear(TFT_BLUE);
+    display.drawCentreString("M5STACK Display Module 13.2", display.width() / 2, 10);
+    display.drawCentreString("蓝(BLUE)", display.width() / 2, display.height() / 2);
     delay(4000);
 
-    hdmi.clear(TFT_BLACK);
-    hdmi.drawPng(pattern_test, ~0u, 0, 0, hdmi.width(), hdmi.height(), 0, 0,
-                 (hdmi.width() / 320), (hdmi.height() / 240),
+    display.clear(TFT_BLACK);
+    display.drawPng(pattern_test, ~0u, 0, 0, display.width(), display.height(), 0, 0,
+                 (display.width() / 320), (display.height() / 240),
                  datum_t::middle_center);
     delay(4000);
 }
